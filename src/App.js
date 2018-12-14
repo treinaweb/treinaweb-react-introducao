@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <div>
         <TextCounter limit={20} />
+        <TextCounter  />
       </div>
     );
   }
