@@ -5,7 +5,8 @@ class MyForm extends Component{
         super(props);
 
         this.state = {
-            name: 'abc'
+            name: '',
+            message: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -24,6 +25,10 @@ class MyForm extends Component{
                 <label>
                     Name:
                     <input type="text" name="name" value={state.name} onChange={this.handleChange} /> {state.name}
+                </label>
+                <label>
+                    Message:
+                    <textarea value={state.message} />
                 </label>
                 <input type="submit" value="Enviar" />
             </form>
