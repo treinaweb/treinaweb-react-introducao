@@ -23,7 +23,7 @@ class MyForm2 extends Component{
                 <div>
                     <label>
                         Name:
-                        <input type="text" name="name" ref={this.inputName} />
+                        <input defaultValue={'abcde'} type="text" name="name" ref={this.inputName} />
                     </label>
                 </div>
                 <input type="submit" value="Enviar" />
