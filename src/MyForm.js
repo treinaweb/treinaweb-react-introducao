@@ -6,8 +6,15 @@ class MyForm extends Component{
 
         this.state = {
             name: '',
+            fruit: 'orange',
             message: ''
         }
+
+        this.fruits = [
+            {'name': 'Apple', 'value': 'apple'},
+            {'name': 'Banana', 'value': 'banana'},
+            {'name': 'Orange', 'value': 'orange'}
+        ];
 
         this.handleChange = this.handleChange.bind(this);
     }
@@ -22,14 +29,28 @@ class MyForm extends Component{
         const { state } = this;
         return (
             <form>
-                <label>
-                    Name:
-                    <input type="text" name="name" value={state.name} onChange={this.handleChange} /> {state.name}
-                </label>
-                <label>
-                    Message:
-                    <textarea value={state.message} />
-                </label>
+                <div>
+                    <label>
+                        Name:
+                        <input type="text" name="name" value={state.name} onChange={this.handleChange} /> {state.name}
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Fruit:
+                        <select value={state.fruit}>
+                            {
+                                this.fruits.map(fruit => <option value={fruit.value} >{fruit.name}</option>)
+                            }
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Message:
+                        <textarea value={state.message} />
+                    </label>
+                </div>
                 <input type="submit" value="Enviar" />
             </form>
         )
