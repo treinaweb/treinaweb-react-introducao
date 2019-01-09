@@ -1,32 +1,90 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.course-form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0 auto;
+  width: 300px;
+}
+
+.course-form label{
+  display: grid;
+  grid-template-columns: 80px auto;
+  grid-gap: 5px;
+  margin: 5px;
+}
+
+.course-form label span{
+  font-weight: bold;
+}
+
+.course-form button{
+  margin: 0 auto;
+  border: none;
+  background-color: #0062ac;
   color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.courses-list{
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.course{
+  position: relative;
+  width: 150px;
+  border: 1px solid #ddd;
+  list-style-type: none;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  background-color: #f6f6f6;
+}
+
+.course:hover{
+  background-color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.course button{
+   position: absolute;
+   top: 0;
+   right: 0;
+   cursor: pointer;
+   border: none;
+   background-color: #ac3940;
+   color: white;
+   z-index: 2;
+ }
+
+.course button:hover{
+  background-color: #d2434a;
+}
+
+.course img{
+  display: block;
+  width: calc(100% - 20px);
+  max-height: 150px;
+  margin: 10px auto;
+}
+
+.course div:first-child{
+  position: relative;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.course div:first-child::before{
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
 }
